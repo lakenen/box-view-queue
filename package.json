@@ -1,0 +1,16 @@
+{
+  "name": "box-view-queue",
+  "version": "0.0.0",
+  "description": "do not try to use this",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cameron Lakenen <lakenen@box.com>",
+  "license": "MIT",
+  "dependencies": {
+    "extend": "^1.3.0",
+    "eemitter": "^0.1.0",
+    "box-view": "^0.1.6"
+  }
+}
