@@ -15,15 +15,23 @@ var client = module.exports.createClient({
 // client.viewURL('http://10.0.2.2:9990/article-typography.pdf', function (err, res) {
 //     console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
 // });
-client.viewURL('https://cloud.box.com/shared/static/t8h3ith36mdnssywr0zo.pdf', function (err, res) {
-    console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
+// client.viewURL('https://cloud.box.com/shared/static/t8h3ith36mdnssywr0zo.pdf', function (err, res) {
+//     console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
+// });
+// client.viewURL('https://cloud.box.com/shared/static/t8h3ith36mdnssywr0zo.pdf', function (err, res) {
+//     console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
+// });
+var sessionRequest = client.viewURL('http://nms.sagepub.com/content/early/2011/09/27/1461444811412160.full.pdf');
+sessionRequest.on('error', function (err) {
+    console.error('error'.red, err);
 });
-client.viewURL('https://cloud.box.com/shared/static/t8h3ith36mdnssywr0zo.pdf', function (err, res) {
-    console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
+sessionRequest.on('document.done', function (doc) {
+    console.error('document done'.yellow, doc);
 });
-client.viewURL('https://cloud.box.com/shared/static/t8h3ith36mdnssywr0zo.pdf', function (err, res) {
-    console.log(err && (err.message && err.message.red || err) || res.urls.view.green);
+sessionRequest.on('done', function (sess) {
+    console.log('session!'.green, sess);
 });
+
 
 function parseJSONBody(body) {
     try {
@@ -50,4 +58,5 @@ require('http').createServer(function (req, res) {
         res.writeHeader(200);
         res.end();
     });
-}).listen(9999);*/
+}).listen(9999);
+*/
