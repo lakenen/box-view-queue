@@ -6,10 +6,14 @@ module.exports = {
         return new BoxViewQueue(options);
     }
 };
-/*
-var client = module.exports.createClient({
+
+/*var client = module.exports.createClient({
     token: process.env.BOX_VIEW_API_TOKEN,
-    queue: 'redis'
+    queue: 'redis',
+    queueOptions: {
+        host: '127.0.0.1',
+        port: 6379
+    }
 });
 
 // client.viewURL('http://10.0.2.2:9990/article-typography.pdf', function (err, res) {
