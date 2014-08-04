@@ -1,6 +1,6 @@
 {
   "name": "box-view-queue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "do not try to use this",
   "main": "index.js",
   "scripts": {
